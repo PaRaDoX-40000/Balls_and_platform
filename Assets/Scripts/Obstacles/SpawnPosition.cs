@@ -8,7 +8,9 @@ public class SpawnPosition
 {
     [SerializeField] private Transform _position;
     [Range(0, 3)]
-    [SerializeField] private float _randomOffset;
+    [SerializeField] private float _randomOffsetX;
+    [Range(0, 3)]
+    [SerializeField] private float _randomOffsetY;
     [SerializeField] private ObstacleParameters[] _obstacleParameters;
     public UnityAction SpawnIsFinished;
 
@@ -20,8 +22,9 @@ public class SpawnPosition
             yield return new WaitForSeconds(obstacleParameters.GetTime());
             if (poolObjects.TryGetDamageObject(obstacleParameters.SpavnObect, out Obstacle DamageObject))
             {
-                float randomOffset = Random.Range(-_randomOffset, _randomOffset);
-                Vector3 randomPosition = _position.position + new Vector3(randomOffset, 0, 0);
+                float randomOffsetX = Random.Range(-_randomOffsetX, _randomOffsetX);
+                float randomOffsetY = Random.Range(-_randomOffsetY, _randomOffsetY);
+                Vector3 randomPosition = _position.position + new Vector3(randomOffsetX, randomOffsetY, 0);
                 DamageObject.transform.position = randomPosition;
                 DamageObject.transform.eulerAngles = obstacleParameters.Rotation;
                 DamageObject.gameObject.SetActive(true);

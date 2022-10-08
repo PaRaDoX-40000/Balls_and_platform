@@ -26,13 +26,17 @@ public class EntityHealth : MonoBehaviour//
         _animator = GetComponent<Animator>();
     }
 
-    public void SetInvulnerability(bool T)
+    public void SetInvulnerability(bool T, float time=0)
     {
         _invulnerability = T;
         if (coroutineInvulnerabilityTimer != null)
         {
             StopCoroutine(coroutineInvulnerabilityTimer);
             _animator.SetBool("Invulnerability", false);
+        }
+        if (time > 0)
+        {
+            coroutineInvulnerabilityTimer = StartCoroutine(invulnerabilityTimer(time));
         }
     }
 
@@ -44,7 +48,7 @@ public class EntityHealth : MonoBehaviour//
             {
                 _healthPoints -= damage;
                 TakeDamageEvent?.Invoke();
-                coroutineInvulnerabilityTimer = StartCoroutine(invulnerabilityTimer());
+                coroutineInvulnerabilityTimer = StartCoroutine(invulnerabilityTimer(_invulnerabilityTime));
                 if (_healthPoints <= 0)
                 {
                     Died();
@@ -54,21 +58,20 @@ public class EntityHealth : MonoBehaviour//
     }
     private void Died()
     {
-        DiedAction?.Invoke();
-        //Debug.Log("Ded");
+        DiedAction?.Invoke();    
     }
 
-    private IEnumerator invulnerabilityTimer()
+    private IEnumerator invulnerabilityTimer(float invulnerabilityTime)
     {
         _invulnerability = true;
         _animator.SetBool("Invulnerability", true);
-        yield return new WaitForSeconds(_invulnerabilityTime);
+        yield return new WaitForSeconds(invulnerabilityTime);
         _animator.SetBool("Invulnerability", false);
         _invulnerability = false;
     }
 
 
-    private void Restart()
+    public void Restart()
     {
         transform.position = _spawnPoint;
         _healthPoints = _maxHealthPoints;

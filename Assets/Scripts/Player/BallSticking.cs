@@ -30,7 +30,7 @@ public class BallSticking : MonoBehaviour
         }
     }
 
-    private void Restart()
+    public void Restart()
     {
         _rigidbody.bodyType = RigidbodyType2D.Dynamic;
         _rigidbody.velocity = Vector3.zero;
