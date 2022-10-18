@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a492567c4f1a54f4b97d8d28e9d5b780, type: 3}
   m_Name: "\u0421urrency \u0421ontainer"
   m_EditorClassIdentifier: 
-  _gold: 900
+  _gold: 0
+  GoldChanged:
+    m_PersistentCalls:
+      m_Calls: []

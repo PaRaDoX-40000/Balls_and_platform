@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8096e9c02880f834fa73eff6404ea2f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 30
+  _speed: 50
   _platformRigidbody: {fileID: 1919787136169830276}
 --- !u!114 &1919787136169830274
 MonoBehaviour:
@@ -148,6 +148,7 @@ MonoBehaviour:
     \u043D\u043E \u0437\u043D\u0430\u0447\u0438\u0442\u0435\u043B\u044C\u043D\u043E
     \u0443\u043A\u0440\u0435\u043F\u0438\u043B\u0430\u0441\u044C"
   _icon: {fileID: 21300000, guid: 71e8c29253db5e641922e164e33c7bd7, type: 3}
+  _entityHealth: {fileID: 1919787136169830275}
   _entityType: 1
 --- !u!114 &1919787136169830277
 MonoBehaviour:

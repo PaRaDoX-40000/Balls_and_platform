@@ -40,7 +40,8 @@ AudioSource:
   m_GameObject: {fileID: 5085347771707896754}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5484064677846685232, guid: ff98b567db7eb5a4691dc96802e42e01,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: cf9e5894d7fc07c4ab549507bb9c9789, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
@@ -188,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2061998199a2e14e952301f9447cabd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageAreas: []
+  _downwardMovement: {fileID: 0}
   obstacleEnum: 0
 --- !u!58 &6086272353461722039
 CircleCollider2D:
@@ -220,6 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 1
   _iconImage: {fileID: 8051891714339169579}
+  circleCollider: {fileID: 6086272353461722039}
   _coinTake:
     m_PersistentCalls:
       m_Calls:
@@ -234,7 +236,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  circleCollider: {fileID: 6086272353461722039}
 --- !u!1 &8051891714339169579
 GameObject:
   m_ObjectHideFlags: 0

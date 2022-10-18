@@ -19,9 +19,9 @@ public class BackgroundMove : MonoBehaviour
         foreach(Transform background in _backgrounds)
         {
             background.Translate(Vector3.down * _speed * Time.deltaTime);
-            if (background.localPosition.y < -15)
+            if (background.localPosition.y < -12.5)
             {
-                background.localPosition = new Vector3(0,17,0);
+                background.localPosition = new Vector3(0, 12.5f, 0);
             }
 
         }

@@ -9,6 +9,14 @@ public class PauseMenuInGame : MonoBehaviour
     [SerializeField] private ExitToMenu _exitToMenu;
     [SerializeField] ChangingActivityAnimation activityAnimation;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SaprtPause();
+        }
+    }
+
     public void SaprtPause()
     {
         _pausePanel.SetActive(true);

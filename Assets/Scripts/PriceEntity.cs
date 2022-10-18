@@ -18,6 +18,11 @@ public class PriceEntity : ScriptableObject
     public bool Purchased => _purchased;
     public int Price => _price;
 
+    public void Loading(bool purchased)
+    {
+        _purchased = purchased;
+    }
+
 
     public void TryBuyEntityVoid()///////Переименуй битчччч
     {
@@ -33,9 +38,7 @@ public class PriceEntity : ScriptableObject
     }
 
     public bool TryBuyEntity()
-    {
-        
-
+    {       
         if (_сurrencyСontainer.TryRemoveGold(_price)==false)
         {
             return false;
@@ -45,7 +48,6 @@ public class PriceEntity : ScriptableObject
             _purchased = true;
             EntityBought?.Invoke();
             return true;
-        }
-            
+        }           
     }
 }

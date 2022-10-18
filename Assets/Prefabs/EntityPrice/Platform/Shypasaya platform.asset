@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shypasaya platform
   m_EditorClassIdentifier: 
   _entity: {fileID: 1919787136169830274, guid: 45b903c69721ac644b12f12e90f07c80, type: 3}
-  _price: 400
-  _purchased: 1
+  _price: 500
+  _purchased: 0
   "_\u0441urrency\u0421ontainer": {fileID: 11400000, guid: 468c362a3cd763341a1c236f24a4b8f8,
     type: 2}

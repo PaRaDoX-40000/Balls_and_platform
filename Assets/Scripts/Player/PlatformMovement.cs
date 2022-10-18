@@ -17,7 +17,7 @@ public class PlatformMovement : MonoBehaviour
         //}
         if (Input.GetMouseButton(0))
         {
-            Vector3 touch = Input.mousePosition;
+            Vector3 touch = Input.mousePosition+ new Vector3 (0,75f,0);
             Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch);
             Vector3 pathVector = (touchPosition - transform.position);
             pathVector.z = 0;

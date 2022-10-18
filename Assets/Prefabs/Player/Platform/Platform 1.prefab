@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8096e9c02880f834fa73eff6404ea2f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 30
+  _speed: 50
   _platformRigidbody: {fileID: 8052672403653166685}
 --- !u!114 &8052672403653166683
 MonoBehaviour:
@@ -399,6 +399,7 @@ MonoBehaviour:
   _description: "\u0421\u0430\u043C\u0430\u044F \u043E\u0431\u044B\u0447\u043D\u0430\u044F
     \u043F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u0430"
   _icon: {fileID: 21300000, guid: 6c4c49067a4110645b2544b9b18a76e7, type: 3}
+  _entityHealth: {fileID: 8052672403653166682}
   _entityType: 1
 --- !u!114 &8052672403653166684
 MonoBehaviour:

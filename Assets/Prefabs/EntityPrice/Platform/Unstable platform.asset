@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Unstable platform
   m_EditorClassIdentifier: 
   _entity: {fileID: 4070383501442796090, guid: dc222d57283403540ba5d09357a1ed88, type: 3}
-  _price: 1000
-  _purchased: 1
+  _price: 600
+  _purchased: 0
   "_\u0441urrency\u0421ontainer": {fileID: 11400000, guid: 468c362a3cd763341a1c236f24a4b8f8,
     type: 2}

@@ -4,14 +4,18 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     
 
-    [SerializeField] private string _androidAdUnitId = "Rewarded_Android";
-    [SerializeField] private string _iOSAdUnitId = "Rewarded_iOS";
-    [SerializeField] TMP_Text text;
+    private string _androidAdUnitId = "Rewarded_Android";
+    private string _iOSAdUnitId = "Rewarded_iOS";
+
+    [SerializeField] private Button adsButton;
+
+    [SerializeField] private UnityEvent _adСompleted;
 
     private string _adUnitId;
 
@@ -25,30 +29,33 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
 
     private void Start()
     {
-        LoadAd();
+        StartCoroutine(WaitTime(2, LoadAd));
     }
 
-    // Load content to the Ad Unit:
+    private IEnumerator WaitTime(float time,UnityAction action)
+    {
+        yield return new WaitForSeconds(time);
+        action?.Invoke();
+    }
+
+   
     public void LoadAd()
     {           
         Advertisement.Load(_adUnitId, this);
     }
 
     public void ShowAd()
-    {
-        // Then show the ad:
+    {       
         Advertisement.Show(_adUnitId, this);
+        adsButton.interactable = false;
     }
 
     public void OnUnityAdsShowComplete(string adUnitId, UnityAdsShowCompletionState showCompletionState)
     {
         if (adUnitId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
         {
-            Debug.Log("Unity Ads Rewarded Ad Completed");
-            // Grant a reward.
-
-
-            text.text = "Rebirth";            
+            _adСompleted?.Invoke();
+            Debug.Log("Unity Ads Rewarded Ad Completed");                           
         }
         LoadAd();
     }
@@ -56,6 +63,7 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
     public void OnUnityAdsAdLoaded(string adUnitId)
     {
         Debug.Log("Ad Loaded: " + adUnitId);
+        adsButton.interactable = true;
     }
 
     // Implement Load and Show Listener error callbacks:

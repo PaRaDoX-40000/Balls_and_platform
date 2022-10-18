@@ -13,8 +13,10 @@ public class PriceEntityUI : MonoBehaviour
     [SerializeField] private Button _button;
     [SerializeField] private TMP_Text _buttonText;
     [SerializeField] private TMP_Text _price;
+    [SerializeField] private TMP_Text _healthText;
+    [SerializeField] private TMP_Text _sizeText;
 
-   
+
 
 
 
@@ -47,5 +49,7 @@ public class PriceEntityUI : MonoBehaviour
         _image.sprite = priceEntity.Entity.Icon;
         _title.text = priceEntity.Entity.EntityName;
         _description.text = priceEntity.Entity.Description;
+        _healthText.text = priceEntity.Entity.EntityHealth.MaxHealthPoints.ToString();
+        _sizeText.text = priceEntity.Entity.transform.localScale.x.ToString();
     }
 }

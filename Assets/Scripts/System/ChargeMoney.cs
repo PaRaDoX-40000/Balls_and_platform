@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChargeMoney : MonoBehaviour
 {
     [SerializeField] private СurrencyСontainer _сurrencyСontainer;
-    [SerializeField] private MoneyPanelUI moneyPanelUI;
+    [SerializeField] private MoneyPanelUI moneyPanelUI;   
 
     public void AddGold(int quantity)
     {      
@@ -13,6 +13,11 @@ public class ChargeMoney : MonoBehaviour
         moneyPanelUI.SetMoneyText(_сurrencyСontainer.Gold);
     }
     private void Start()
+    {
+        _сurrencyСontainer.GoldChanged.AddListener(ShowGold);
+        ShowGold();
+    }
+    private void ShowGold()
     {
         moneyPanelUI.SetMoneyText(_сurrencyСontainer.Gold);
     }

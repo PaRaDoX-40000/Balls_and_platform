@@ -8,6 +8,7 @@ public abstract class Entity: MonoBehaviour
     [SerializeField] private string _entityName;
     [SerializeField] private string _description;
     [SerializeField] private Sprite _icon;
+    [SerializeField] private EntityHealth _entityHealth;
 
 
     [SerializeField] private EntityType _entityType;
@@ -16,7 +17,11 @@ public abstract class Entity: MonoBehaviour
 
     public string EntityName => _entityName;
     public string Description  => _description;
-    public Sprite Icon => _icon;       
+    public Sprite Icon => _icon;
+
+    public EntityHealth EntityHealth => _entityHealth;
+
+    
 }
 public enum EntityType
 {

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Price Boll2
   m_EditorClassIdentifier: 
   _entity: {fileID: 8411914653256001921, guid: 86e3849f9cacccd4da42ffa30fea18e7, type: 3}
-  _price: 2000
-  _purchased: 1
+  _price: 300
+  _purchased: 0
   "_\u0441urrency\u0421ontainer": {fileID: 11400000, guid: 468c362a3cd763341a1c236f24a4b8f8,
     type: 2}

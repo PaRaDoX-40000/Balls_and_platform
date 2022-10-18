@@ -18,6 +18,8 @@ public class EntityHealth : MonoBehaviour//
     private bool _invulnerability=false;
     private Coroutine coroutineInvulnerabilityTimer;
 
+    public int MaxHealthPoints => _maxHealthPoints;
+
     void Start()
     {
         _spawnPoint = transform.position;
